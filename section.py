@@ -27,12 +27,14 @@ def compute_sec_tri(du_max, length, Ib, alu_cuivre, cos_phi) :
     dU = np.sqrt(3) * Ib * length * (R * cos_phi + X * sin_phi)
     du_100 = dU / 400 * 100
 
+    print(du_100)
+
     section = select_sec(du_100, du_max)
     return section
 
 
 
 if __name__ == "__main__" :
-    section = compute_sec_tri(2, 0.02, 100, 'CUIVRE', 0.85)
+    section = compute_sec_tri(2, 0.100, 20, 'CUIVRE', 0.85)
 
     print("section minimale : ", section)
